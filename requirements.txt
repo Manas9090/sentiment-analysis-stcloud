@@ -2,5 +2,7 @@ streamlit
 openai==1.68
 transformers
 torch
+python-dotenv
+
 
 
