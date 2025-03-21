@@ -1,5 +1,5 @@
 streamlit
-openai==0.28
+openai==1.68
 transformers
 torch
 
