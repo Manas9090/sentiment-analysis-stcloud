@@ -6,15 +6,19 @@ openai.api_key = st.secrets["openai"]["api_key"]
 
 def sentiment_analysis(text):
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-2",
+        response = openai.chat.completions.create(
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": f"Analyze the sentiment of the following text:\n\n{text}"}
             ],
             max_tokens=100
         )
-        return response["choices"][0]["message"]["content"]
+        #return response["choices"][0]["message"]["content"] 
+        print("Add response", response)
+        #return response.choices[0].message["content"]
+        return response.choices[0].message.content
+        #return response
     except Exception as e:
         return f"Error: {e}"
 
