@@ -1,0 +1,2 @@
+streamlit
+open==0.28
